@@ -1,19 +1,21 @@
-# KooJoke
+# KooJoke (enhancement/v1)
 
-KooJoke — an Objective-C iOS app skeleton (pure code, no storyboard) with four tabs: Jokes, Video, Girls, Featured.
+This branch upgrades the skeleton into a more production-like starter.
 
-Features included in this repository:
-- Jokes: pull-to-refresh and pagination
-- Video: short-video style vertical feed with auto-play and fullscreen
-- Girls: two-column image grid with pull-to-refresh, load more, and big-image viewer
-- Featured: simple banner carousel
+New features in enhancement/v1:
+- ZFPlayer integration for smoother video feed
+- Production-like NetworkManager + APIClient (baseURL, timeout, reachability, simple retries)
+- Theme and Logger utilities for consistent styling and debugging
+- Girls page converted to waterfall layout (CHTCollectionViewWaterfallLayout)
+- README updated with additional instructions (Info.plist keys for saving images)
 
-Dependencies (CocoaPods): AFNetworking, SDWebImage, Masonry, MJRefresh, SDCycleScrollView
-
-How to run
-1. Install CocoaPods if you don't have it: `sudo gem install cocoapods`
-2. In the project root run `pod install`
-3. Open KooJoke.xcworkspace in Xcode and run (iOS 13+)
+How to run locally
+1. Checkout the branch: git checkout enhancement/v1
+2. Run: pod install
+3. Open KooJoke.xcworkspace
+4. Ensure Info.plist contains NSPhotoLibraryAddUsageDescription if you want to save images
+5. Build and run (simulator or device). Video autoplay and image save require network and device features.
 
 Notes
-- This repo contains a code skeleton and mock data (sample image/video URLs). Replace API endpoints and assets as needed.
+- This branch does not add binary assets (icons/launch images). Add as needed.
+- If you use a device to save images, grant Photos permission when prompted.
